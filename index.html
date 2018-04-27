@@ -15,15 +15,38 @@
             height: auto;
         }
         h1 {
-            text-shadow: 0px 2px 5px #404040;
+            text-shadow: 0px 2px 8px #404040;
+            font-family: monospace;
         }
+        nav.nav-center ul {
+            text-align: center;
+        }
+        nav.nav-center ul li {
+            display: inline;
+            float: none;
+        }
+        nav.nav-center ul li a {
+            display: inline-block;
+        }
+        .mobile-fab-tip {
+        position: fixed;
+        right: 10px;
+        padding:0px 1rem;
+        text-align: right;
+        background-color: #424242;
+        border-radius: 6px;
+        color: #FFF;
+        width:auto;
+        }
+        
     </style>
 </head>
+
+    
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">ANAGA</a>
-      <ul class="right hide-on-med-and-down">
+  <nav class="nav-center white" role="navigation">
+    <div class="nav-wrapper container scrollspy" id="navbar">
+        <ul class="hide-on-med-and-down">
         <li><a href="#intro">Introducción</a></li>
         <li><a href="#natural">Medio natural</a></li>
         <li><a href="#socioeconomia">Socioeconomía</a></li>
@@ -31,7 +54,7 @@
         <li><a href="#gantt">Gantt</a></li>
         <li><a href="#presupuesto">Presupuesto</a></li>
         <li><a href="#referencias">Referencias</a></li>
-      </ul>
+        </ul>
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#intro">Introducción</a></li>
@@ -45,14 +68,18 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+    
+    <div class="fixed-action-btn" id="fabtotop">
+        <a class="btn-floating btn-large tooltipped teal accent-3" data-position="left" data-tooltip="Volver arriba" href="#navbar"><i class="large material-icons">expand_less</i></a>
+    </div>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">Restauración de Anaga</h1>
+        <h1 class="header center teal-text text-accent-3">Restauración de Anaga</h1>
         <div class="row center">
-          <h5 class="header col s12 light">Proyecto de restauración para una parcela de la reserva natural de la biosfera de Anaga, en Tenerife. En esta página encontrarás una versión digital y resumida de la memoria de este proyecto.</h5>
+          <h5 class="header col s12 light">Proyecto de restauración para una parcela de la reserva natural de la Biosfera de Anaga, en Tenerife. En esta página encontrarás una versión resumida de la memoria de este proyecto.</h5>
         </div>
         <br><br>
 
@@ -226,18 +253,6 @@
     </div>
   </div>
 
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">
@@ -262,7 +277,6 @@
     </div>
   </footer>
 
-
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
@@ -274,6 +288,29 @@
             scrollOffset: 0
             });
         });
+        $(document).ready(function(){
+        $('.fixed-action-btn').floatingActionButton();
+        });
+        $(document).ready(function(){
+            $('.tooltipped').tooltip();
+        });
+        var elem = document.querySelector('.fixed-action-btn');
+        var instance = M.FloatingActionButton.init(elem, {
+        direction: 'left',
+        });
+        var elem = document.querySelector('.tooltipped');
+        var instance = M.Tooltip.init(elem, options);
+
+    </script>
+    <script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            document.getElementById("fabtotop").style.display = "block";
+        } else {
+            document.getElementById("fabtotop").style.display = "none";
+        }
+    }
     </script>
   </body>
 </html>
