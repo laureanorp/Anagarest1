@@ -9,51 +9,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <style>
-        .parallax-container .parallax img {
-            width: 100%;
-            height: auto;
-        }
-        h1 {
-            text-shadow: 0px 2px 8px #404040;
-            font-family: monospace;
-        }
-        nav.nav-center ul {
-            text-align: center;
-        }
-        nav.nav-center ul li {
-            display: inline;
-            float: none;
-        }
-        nav.nav-center ul li a {
-            display: inline-block;
-        }
-        #nav-mobile li {
-           display: block;
-        }
-        .mobile-fab-tip {
-        position: fixed;
-        right: 10px;
-        padding:0px 1rem;
-        text-align: right;
-        background-color: #424242;
-        border-radius: 6px;
-        color: #FFF;
-        width:auto;
-        }
-        #fabtotop {
-            display: none;
-        }
-        .sidenav{  
-        right: 0px;
-        }
-        @media only screen and (max-device-width: 720px) {
-        h1.header {
-            font-size: 2.2rem;
-        }
-        }
-        
-    </style>
 </head>
 
     
@@ -99,7 +54,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img src="img/8.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img class="img" src="img/8.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
@@ -121,11 +76,11 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light"> </h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="img/6.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img class="img" src="img/6.jpg" alt="Unsplashed background img 2"></div>
   </div>
     
     <div class="container">
@@ -146,11 +101,11 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light"> </h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="img/4.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img class="img" src="img/4.jpg" alt="Unsplashed background img 2"></div>
   </div>
     
     <div class="container">
@@ -171,11 +126,11 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light"> </h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="img/5.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img class="img" src="img/5.jpg" alt="Unsplashed background img 2"></div>
   </div>
     
     <div class="container">
@@ -196,11 +151,11 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light"> </h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="img/7.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img class="img" src="img/7.jpg" alt="Unsplashed background img 2"></div>
   </div>
     
   <div class="container">
@@ -221,11 +176,11 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light"> </h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img class="img" src="img/2.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
@@ -246,11 +201,11 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light"> </h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img class="img" src="img/2.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
@@ -312,9 +267,13 @@
         var instance = M.FloatingActionButton.init(elem, {
         direction: 'left',
         });
-        var elem = document.querySelector('.tooltipped');
-        var instance = M.Tooltip.init(elem, options);
+        $('#nav-mobile li').click(function() {
+           var $trigger = $('.sidenav-trigger');
+           var sidenavId = M.getIdFromTrigger($trigger[0]);
+           var sidenavInstance = document.getElementById(sidenavId).M_Sidenav;
 
+           sidenavInstance.close();
+          });
     </script>
     <script>
     window.onscroll = function() {scrollFunction()};
