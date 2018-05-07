@@ -14,7 +14,7 @@
     
 <body>
   <nav class="nav-center white" role="navigation">
-    <div class="nav-wrapper container scrollspy" id="navbar">
+      <div class="nav-wrapper container" id="navbar">
         <ul class="hide-on-med-and-down">
         <li><a href="#intro">Introducción</a></li>
         <li><a href="#natural">Medio natural</a></li>
@@ -22,7 +22,7 @@
         <li><a href="#gestion">Gestión</a></li>
         <li><a href="#gantt">Gantt</a></li>
         <li><a href="#presupuesto">Presupuesto</a></li>
-        <li><a href="#referencias">Referencias</a></li>
+        <li><a href="#agradecimientos">Agradecimientos</a></li>
         </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -32,14 +32,14 @@
         <li><a href="#gestion">Gestión</a></li>
         <li><a href="#gantt">Gantt</a></li>
         <li><a href="#presupuesto">Presupuesto</a></li>
-        <li><a href="#referencias">Referencias</a></li>
+        <li><a href="#agradecimientos">Agradecimientos</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
     
     <div class="fixed-action-btn" id="fabtotop">
-        <a class="btn-floating btn-large teal accent-3" href="#navbar"><i class="large material-icons">expand_less</i></a>
+        <a class="btn-floating btn-large teal accent-3" href="#gantt"><i class="large material-icons">expand_less</i></a>
     </div>
 
   <div id="index-banner" class="parallax-container">
@@ -56,7 +56,6 @@
     </div>
     <div class="parallax"><img class="img" src="img/8.jpg" alt="Unsplashed background img 1"></div>
   </div>
-
 
     <div class="container">
     <div class="section scrollspy" id="intro">
@@ -209,7 +208,7 @@
   </div>
 
   <div class="container">
-    <div class="section scrollspy" id="referencias">
+    <div class="section scrollspy" id="agradecimientos">
 
       <div class="row">
         <div class="col s12 center">
@@ -233,9 +232,9 @@
           <h5 class="white-text">Enlaces importantes</h5>
           <ul>
             <li><a class="white-text" href="#!">Descargar el PDF de la memoria del proyecto</a></li>
-            <li><a class="white-text" href="#!">Descargar la división territorial de rodales</a></li>
-            <li><a class="white-text" href="#!">Contactar con el coordinador del proyecto</a></li>
-            <li><a class="white-text" href="#!">Página web de la reserva natural de Anaga</a></li>
+            <li><a class="white-text" href="#!">Descargar la división territorial detallada de rodales</a></li>
+            <li><a class="white-text" href="mailto:alu0100945799@ull.edu.es?Subject=Acerca%20de%20ANAGAREST1">Contactar con el coordinador del proyecto</a></li>
+            <li><a class="white-text" href="http://reservabiosfera.tenerife.es/">Página web de la reserva natural de Anaga</a></li>
           </ul>
         </div>
       </div>
@@ -284,6 +283,15 @@
             document.getElementById("fabtotop").style.display = "none";
         }
     }
+    $('#fabtotop').click(function() {
+    var offset = $('#navbar').offset().top + 1;
+    M.anime({
+     targets: [document.documentElement, document.body],
+     scrollTop: offset,
+     duration: 400,
+     easing: 'easeOutCubic'
+    });
+    });
     </script>
   </body>
 </html>
