@@ -21,6 +21,20 @@ p {
   }
 }
 
+@media only screen and (max-width: 992px){
+ .parallax-container .parallax .img {
+    position: relative;
+     min-height: unset;
+    }
+    .parallax-container {
+    min-height: 100px;
+    }
+}
+    
+.parallax .img {
+    width: 100%;
+}
+
 .parallax-container {
   min-height: 400px;
   line-height: 0;
@@ -64,4 +78,4 @@ width:auto;
 }
 #fabtotop {
     display: none;
-}s
+}
