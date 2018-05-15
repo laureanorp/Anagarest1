@@ -27,7 +27,10 @@ p {
      min-height: unset;
     }
     .parallax-container {
-    min-height: 100px;
+    min-height: unset;
+    }
+    .parallax-container .parallax {
+    position: unset;
     }
 }
     
@@ -36,7 +39,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 400px;
+    min-height: 400px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
